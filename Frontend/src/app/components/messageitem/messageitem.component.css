@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
+
+.avatar{
+    height: 30px;
+    width: 30px;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h5{
+    font-size: 15px;
+    line-height: 15px;
+}
+
+h6{
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.container p{
+    width: fit-content;
+}
+
+.container p.mr-auto{
+    background-color: #c5ccf3;
+    padding: 5px 15px;
+    border-radius: 25px;
+}
+
+.container p.ml-auto{
+    background-color: #efb398;
+    padding: 5px 15px;
+    border-radius: 25px;
+}
+
+.row{
+    margin-right: -15px;
+}

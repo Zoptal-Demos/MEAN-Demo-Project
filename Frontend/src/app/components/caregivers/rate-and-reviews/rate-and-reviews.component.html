@@ -1,0 +1,26 @@
+<div class="container mat-elevation-z8">
+    <div class="row">
+      <div class="col">
+        <h3>Rate and reviews</h3>
+      </div>
+    </div>
+    <mat-divider class="mb-3"></mat-divider>
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12 item" *ngFor="let item of rating">
+            <img src="{{item.ratedBy.profilePic !== '' ? imgageUrl+item.ratedBy.profilePic:'../../../assets/avatar.svg'}}" class="img-fluid avatar">
+            <div class="w-100">
+              <div class="row">
+              <div class="col-md-8"><h4>{{item.ratedBy.name}}</h4></div>
+              <div class="col-md"><mat-icon *ngFor="let item of createStars(item.rating)">{{item ? 'star' : 'star_border'}}</mat-icon></div>
+              </div>
+              <p>{{item.review}}</p>
+              <p class="time">09:23 pm</p>
+            </div>
+          </div>
+          <h6 *ngIf="rating.length <= 0" class="mt-0 mb-0 text-center ml-auto mr-auto">No Data found</h6>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+  </div>

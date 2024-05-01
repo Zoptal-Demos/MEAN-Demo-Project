@@ -1,0 +1,49 @@
+<div class="container mat-elevation-z8">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-1"><strong>Posted By</strong></h3>
+            <mat-divider class="mb-4 mt-2"></mat-divider>
+            <!-- <img src="{{imagePath!=''?'http://locahost:5000/image/'+imagePath:'../../../assets/avatar.svg'}}" class="img-fluid avatar"/> -->
+            <div class="row mb-3">
+                <div class="col-1 text-center">
+                    <img src="{{details.createdBy.profilePic != '' ? imagePath+details.createdBy.profilePic : '../../../assets/avatar.svg'}}" class="img-fluid avatar"/>
+                </div>
+                <div class="col">
+                    <h3 class="mb-0">{{details.createdBy.name}}</h3><h4 class="mb-0">{{details.createdBy.email}}</h4>
+                </div>
+            </div>
+            <mat-divider class="mb-3 mt-2"></mat-divider>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <h3 class="mb-1"><strong>Job Title</strong></h3>
+                </div>
+                <div class="col-10">
+                    <h4 class="mb-0">{{this.details.title}}</h4>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-12">
+                    <h3 class="mb-1"><strong>Job Description</strong></h3>
+                </div>
+                <div class="col-10">
+                    <h4 class="mb-0">{{this.details.description}}</h4>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-12">
+                    <h3 class="mb-1"><strong>Job Schedule</strong></h3>
+                </div>
+                <div class="col-10">
+                    <h4 class="mb-2"><mat-icon>calendar_today</mat-icon><span>{{(0 + + (details.startDate.replace(".","").substring(0,13))) | date:'dd'}} {{((0 + + (details.startDate.replace(".","").substring(0,13))) | date:'MMMM')?.substring(0,3)}}<span *ngIf="details.endDate != ''"> - {{(0 + + (details.endDate.replace(".","").substring(0,13))) | date:'dd'}} {{((0 + + (details.endDate.replace(".","").substring(0,13))) | date:'MMMM')?.substring(0,3)}}</span> </span></h4>
+                    <h4 class="mb-2"><mat-icon>location_on</mat-icon><span>{{this.details.address}}</span></h4>
+                    <h4 class="mb-2"><mat-icon>watch_later</mat-icon><span>{{details.fromTime}} - {{details.toTime}}</span></h4>
+                    <div class="tags"><span *ngFor="let item of createTags((0 + + details.weekSchedule))">{{item}}</span></div>
+                </div>
+            </div>
+            <p class="ml-1"><mat-checkbox (change)="selection($event)">By clicking this box, I certify that I have a potential match for this family according to the terms and conditions</mat-checkbox></p>
+            <button *ngIf="selected" mat-raised-button class="w-100 mt-2" color="primary" (click)="gotoChat()">Contact Family</button>
+        </div>
+    </div>
+</div>

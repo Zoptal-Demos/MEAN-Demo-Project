@@ -1,0 +1,33 @@
+<div class="container mat-elevation-z8">
+    <h3 class="mb-0">Inbox</h3>
+    <mat-divider class="mb-3"></mat-divider>
+    <div class="row">
+        <div class="col-12" *ngFor="let item of messages">
+            <div class="row">
+                <div class="col-12 item">
+                    <img src="{{item.chatted_with.profilePic!=''?'http://locahost:5000/image/'+item.chatted_with.profilePic:'../../../assets/avatar.svg'}}" class="img-fluid avatar" (click)="openChat({loggedInUser : item.loggedInUser._id,userId : item.chatted_with._id,caregiver :item.caregiver._id})">
+                    <!-- <img src="../../../assets/avatar.svg" class="img-fluid avatar"> -->
+                    <div class="w-100">
+                        <div class="msg-item">
+                            <h4 class="w-100" (click)="openChat({loggedInUser : item.loggedInUser._id,userId : item.chatted_with._id,caregiver :item.caregiver._id})">{{item.chatted_with.name}} ({{item.caregiver.name}})</h4>
+                            <button *ngIf="!item.caregiver.isRated;else elseBlock" mat-button class="ml-auto" (click)="ratenow(item.chatted_with._id)">Add Review</button>
+                            <ng-template #elseBlock>
+                                <button mat-button class="ml-auto">Rated</button>
+                            </ng-template>
+                        </div>
+                        <p class="w-100" (click)="openChat({loggedInUser : item.loggedInUser._id,userId : item.chatted_with._id,caregiver :item.caregiver._id})">
+                            <mat-icon>star</mat-icon> {{item.chatted_with.avgRating}}
+                        </p>
+                        <p class="w-100" (click)="openChat({loggedInUser : item.loggedInUser._id,userId : item.chatted_with._id,caregiver :item.caregiver._id})">{{item.message}}</p>
+                        <p class="time">
+                            {{0 + + (item.createdAt+'000') | date:'dd-MM-yyyy'}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+        </div>
+    </div> 
+    <h4 class="mt-5 text-center" *ngIf="messages.length <= 0">No Data Found</h4>
+    <!-- <h4 class="mt-5 text-center">Under Development</h4> -->
+</div>

@@ -1,0 +1,23 @@
+<div class="container mat-elevation-z8">
+    <div class="messagebox">
+        <div class="header">
+            <div>
+                <img src="{{details.profilePic!=''?'http://locahost:5000/image/'+details.profilePic:'../../../assets/avatar.svg'}}" class="img-fluid avatar mt-0">
+            </div>
+            <div>
+                <h5>{{details.name}}</h5>
+                <h6>{{details.email}}</h6>
+                <p>{{details.avgRating}} stars</p>
+            </div>
+        </div>
+        <div class="messagearea" #messagearea>
+            <app-messageitem *ngFor="let item of messages" [align]="item.from._id === loggedInUser ? 'ml-auto' : 'mr-auto'" [message]="item.message"></app-messageitem>
+        </div>
+        <!-- <div class="footer"> -->
+            <form class="footer">
+                <input type="text" class="input-group" placeholder="Type a message" [formControl]="messageControl"/>
+                <button (click)="sendMessage()" type="submit"><mat-icon>send</mat-icon></button>
+            </form>
+        <!-- </div> -->
+    </div>
+</div>

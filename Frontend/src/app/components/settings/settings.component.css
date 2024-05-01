@@ -1,0 +1,15 @@
+.container{
+    width: auto;
+    height: 91.5%;
+    margin: 2%;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+.para{
+    font-size: 10px !important;
+}

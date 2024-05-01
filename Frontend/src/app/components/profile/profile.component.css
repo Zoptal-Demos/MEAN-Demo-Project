@@ -1,0 +1,52 @@
+.avatar{
+    width : 150px;
+    height : 150px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.container{
+    width: auto;
+    height: 91.5%;
+    margin: 2%;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+.container p{
+    width: fit-content;
+    margin: auto;
+}
+
+table{
+    margin: 20px;
+}
+
+.pic{
+    width: 95px;
+    height: 95px;
+    margin: auto;
+    border-radius: 50%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.pic .camera{
+    width: 100%;
+    margin-top: -30px;
+    background-color: rgba(0,0,0,0.2);
+    height: 30px;
+}
+
+mat-icon{
+    margin-top: 5px;
+}
+
+.pic input{
+    width: 95px;
+    height: 95px;
+    margin: auto;
+    border-radius: 50%;
+    opacity: 0;
+}

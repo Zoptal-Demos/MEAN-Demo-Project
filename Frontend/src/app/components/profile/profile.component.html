@@ -1,0 +1,36 @@
+<div class="container mat-elevation-z8">
+    <div class="row">
+        <div class="col-12 text-center">
+          <div class="pic" style="background: url({{imagePath}});background-size: cover;">
+            <input type="file" class="" (change)="onFileSelect($event)" accept=".jpg,.png"/>
+            <div class="camera"><mat-icon>camera_enhance</mat-icon></div>
+        </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col text-center"><p>Agency Name</p></th>
+                            <td scope="col text-center"><p>{{agencyName}}</p></td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="col text-center"><p>Email</p></th>
+                            <td scope="col text-center"><p>{{email}}</p></td>
+                          </tr>
+                          <tr>
+                            <th scope="col text-center"><p>Plan</p></th>
+                            <td scope="col text-center"><p>{{plan}}</p></td>
+                          </tr>
+                          <tr>
+                            <th scope="col text-center"><p>Expiry Date</p></th>
+                            <td scope="col text-center"><p>{{expiryDate}}</p></td>
+                          </tr>
+                        </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>

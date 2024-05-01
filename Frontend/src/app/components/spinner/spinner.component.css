@@ -1,0 +1,18 @@
+.spinner{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.overlay{
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}

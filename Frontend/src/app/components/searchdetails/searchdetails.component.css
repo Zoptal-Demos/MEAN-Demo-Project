@@ -1,0 +1,60 @@
+.avatar{
+    width : 50px;
+    height : 50px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.container{
+    width: auto;
+    height: 91.5%;
+    margin: 2%;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+.container p{
+    width: fit-content;
+    margin: auto;
+}
+
+table{
+    margin: 20px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h4 mat-icon{
+    margin-bottom: -6px;
+    margin-right: 10px;
+}
+
+h3{
+    font-size: 18px;
+    line-height: 22px;
+}
+
+h4{
+    font-size: 15px;
+    line-height: 22px;
+}
+
+h5{
+    font-size: 13px;
+}
+
+.tags{
+    margin-left: 0px;
+}
+
+.tags span{
+    padding: 4px 12px;
+    background: #fb621e;
+    margin: 3px;
+    color: white;
+    font-size: 12px;
+    border-radius: 20px;
+}

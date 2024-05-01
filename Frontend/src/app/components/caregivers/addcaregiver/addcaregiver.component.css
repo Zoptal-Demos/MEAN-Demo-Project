@@ -1,0 +1,24 @@
+.avatar{
+    width : 150px;
+    height : 150px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.container{
+    width: auto;
+    height: 91.5%;
+    margin: 2%;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+.container p{
+    width: fit-content;
+    margin: auto;
+}
+
+table{
+    margin: 20px;
+}

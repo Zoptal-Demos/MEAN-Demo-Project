@@ -1,0 +1,140 @@
+<div class="container mat-elevation-z8">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <div class="pic" style="background: url({{imagepath}});">
+                        <input type="file" (change)="onFileSelect($event)" accept=".jpg,.png"/>
+                        <div class="camera"><mat-icon>camera_enhance</mat-icon></div>
+                    </div>
+                    <!-- <img src="{{details.profilePic !== '' ? imgageUrl+details.profilePic:'../../../assets/avatar.svg'}}" class="img-fluid avatar"> -->
+                </div>
+                <div class="col-8">
+                    <mat-icon *ngFor="let item of stars">{{item ? 'star' : 'star_border'}}</mat-icon>
+                    <h3>{{details.name}}</h3>
+                    <h4>Caregiver</h4>
+                    <h5>{{details.description}}</h5>
+                </div>
+            </div>
+            <div class="row additional">
+                <div class="col-12">
+                    <h5>ADDITIONAL DETAILS</h5>
+                    <mat-divider></mat-divider>
+                </div>
+                <div class="col-6">
+                    <h4>Experience</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.experience}} Years</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Age</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.age}} Years</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Gender</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.gender == 1 ? 'Male' : 'Female'}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Agency Name</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.agency_name.name}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Location</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.work_address_name}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Type of care</h4>
+                </div>
+                <div class="col-6">
+                    <h4 *ngIf="cares.length <= 0;else elseBlock">
+                        No
+                    </h4>
+                    <ng-template #elseBlock>
+                        <div class='row catring'>
+                            <div class="col text-left" *ngFor="let item of cares">
+                                <p>{{item.category_name}}</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row additional-2">
+                <div class="col-6">
+                    <h4>Willing to drive ?</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.willing_to_drive ? 'Yes' : 'No'}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Comfortable with pets ?</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.pets_comfortable ? 'Yes' : 'No'}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Comfortable with smoking ?</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.non_smoker ? 'Yes' : 'No'}}</h4>
+                </div>
+                <div class="col-6">
+                    <h4>Need Transportation ?</h4>
+                </div>
+                <div class="col-6">
+                    <h4>{{details.transportation ? 'Yes' : 'No'}}</h4>
+                </div>
+                <div class="col-6 mt-3">
+                    <h4>Disablibility and home care experience</h4>
+                </div>
+                <div class="col-6 mt-3">
+                    <h4 *ngIf="cares.length <= 0;else elseBlock1">
+                        No
+                    </h4>
+                    <ng-template #elseBlock1>
+                        <div class='row catring'>
+                            <div class="col text-left" *ngFor="let item of disabilities">
+                                <p>{{item.category_name}}</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="col-6 mt-3">
+                    <h4>Schedule Preference</h4>
+                </div>
+                <div class="col-6 mt-3">
+                    <h4 *ngIf="cares.length <= 0;else elseBlock2">
+                        No
+                    </h4>
+                    <ng-template #elseBlock2>
+                        <div class='row catring'>
+                            <div class="col text-left" *ngFor="let item of availabilities">
+                                <p>{{item.category_name}}</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="col-6 mt-3">
+                    <h4>How many hours per week are you needing ?</h4>
+                </div>
+                <div class="col-6 mt-3">
+                    <h4>{{details.hours_per_week != "" ? details.hours_per_week : 0}} hours</h4>
+                </div>
+                <div class="col-6"><button mat-raised-button color="primary" (click)="editProfile()">Edit
+                        Profile</button></div>
+                <div class="col-6"><button mat-raised-button color="primary" (click)="rateAndReview()">Rate and
+                        review</button></div>
+            </div>
+        </div>
+    </div>
+</div>

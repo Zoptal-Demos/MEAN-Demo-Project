@@ -1,0 +1,106 @@
+<div class="container mat-elevation-z8">
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Personal Profile">
+            <app-add [res]="temp"></app-add>
+        </mat-tab>
+        <mat-tab label="Work Profile">
+            <form class="example-form" [formGroup]="registerFormGroup2" (submit)="updatePersonalProfile2()">
+                <div class="row work-profile text-center">
+                    <div class="col-md-6">
+                        <div class="row inner">
+                            <div class="col-lg-3 col-md-6 mb-3" (click)="selectedOption(i+1,item._id,4)" [class.selected]="item.isSelected" *ngFor="let item of categories;index as i" id="{{i+1}}">
+                                <img src="http://locahost:5000/image/{{item.file}}" class="img-fluid">
+                                <p>{{item.category_name}}</p>
+                            </div>
+                        </div>
+                        <mat-form-field class="example-full-width mt-3" appearance="outline">
+                            <mat-label>About Me</mat-label>
+                            <textarea matInput type="text" formControlName="about_me"></textarea>
+                            <mat-error *ngIf="registerFormGroup2.get('about_me')?.hasError('required')">
+                                Bio is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-slide-toggle class="example-full-width mb-3" formControlName="pets_comfortable">
+                            Comfortable with pets ?
+                        </mat-slide-toggle>
+                        <mat-slide-toggle class="example-full-width mb-3" formControlName="willing_to_drive">
+                            Willing to drive
+                        </mat-slide-toggle>
+                        <mat-slide-toggle class="example-full-width mb-3" formControlName="non_smoker">
+                            Non-Smoker ?
+                        </mat-slide-toggle>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <mat-slide-toggle class="example-full-width mb-3" formControlName="transportation">
+                            Able to transport ?
+                        </mat-slide-toggle>
+                        <mat-slide-toggle class="example-full-width mb-3" formControlName="bilingual">
+                            Bilingual
+                        </mat-slide-toggle>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Maximum distance you are willing to travel for work ?</mat-label>
+                                <mat-select formControlName="miles">
+                                    <mat-option *ngFor="let item of milesRange()" value="{{item}}">{{item}} Miles
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <section class="example-full-width text-left">
+                                <h3 class="mb-3">What ages do you have experience working with ?</h3>
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let item of certAndExp; index as key">
+                                        <form #checkform="ngForm">
+                                        <mat-checkbox name="{{item._id}}" [checked]="item.isSelected" (change)="selectedOption($event,item._id,1)">{{item.category_name}}</mat-checkbox>
+                                    </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Numbers of experience providing caregiver service</mat-label>
+                                <mat-select formControlName="experience">
+                                    <mat-option *ngFor="let item of getYears()" value="{{item}}">{{item}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <section class="example-full-width text-left">
+                                <h3 class="mb-3">Disability and home care experience (list any medical, cognitive, diagnosis and behavior related experience you may have)</h3>
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let item of disabilities; index as key">
+                                        <form #checkform="ngForm">
+                                            <mat-checkbox name="{{item._id}}" [checked]="item.isSelected" (change)="selectedOption($event,item._id,2)">{{item.category_name}}</mat-checkbox>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- <section class="example-full-width text-left">
+                                <h3 class="mb-3 mt-4">Experience working with these age groups</h3>
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let item of experiences; index as key">
+                                        <form #checkform="ngForm">
+                                            <mat-checkbox name="{{item._id}}" [checked]="item.isSelected" (change)="selectedOption($event,item._id,3)">{{item.category_name}}</mat-checkbox>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section> -->
+                            <section class="example-full-width text-left">
+                                <h3 class="mb-3 mt-4">Schedule Preference</h3>
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let item of availabilities; index as key">
+                                        <form #checkform="ngForm">
+                                            <mat-checkbox name="{{item._id}}" [checked]="item.isSelected" (change)="selectedOption($event,item._id,3)">{{item.category_name}}</mat-checkbox>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>How many hours per week are you needing</mat-label>
+                                <input matInput type="text" formControlName="hours_per_week"/>
+                            </mat-form-field>
+                            <button class="mt-2 w-100" [disabled]="!registerFormGroup2.valid" type="submit" mat-raised-button
+                                color="primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+</div>

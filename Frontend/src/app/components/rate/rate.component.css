@@ -1,0 +1,8 @@
+.container{
+    max-width: 500px !important;
+    padding: 0px 20px;
+}
+
+mat-form-field{
+    width: 100%;
+}

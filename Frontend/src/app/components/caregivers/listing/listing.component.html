@@ -1,0 +1,29 @@
+<div class="container mat-elevation-z8">
+    <div class="row">
+      <div class="col">
+        <h3>Caregivers</h3>
+      </div>
+      <div class="col text-end">
+        <button mat-raised-button class="ml-auto d-flex" color="primary" (click)="addCaregiver()">Add</button>
+      </div>
+    </div>
+    <mat-divider class="mb-3"></mat-divider>
+    <div class="row">
+      <div class="col-12" *ngFor="let item of caregivers">
+        <div class="row" (click)="chooseItem(item._id)">
+          <div class="col-12 item">
+            <img src="{{item.profilePic !== '' ? imgageUrl+item.profilePic:'../../../assets/avatar.svg'}}" class="img-fluid avatar">
+            <div class="w-100">
+              <div class="row">
+              <div class="col-md-8"><h4>{{item.name}}</h4></div>
+              <div class="col-md"><mat-icon *ngFor="let item of createStars(item.avgRating)">{{item ? 'star' : 'star_border'}}</mat-icon></div>
+              </div>
+              <p>{{item.email}}</p>
+              <p>{{item.work_address_name}}</p>
+              <p class="time">5 Miles away</p>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+  </div>

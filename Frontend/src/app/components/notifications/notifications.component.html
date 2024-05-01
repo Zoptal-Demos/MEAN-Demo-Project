@@ -1,0 +1,19 @@
+<div class="container mat-elevation-z8">
+  <h3 class="mb-0">Notifications</h3>
+  <mat-divider class="mb-3"></mat-divider>
+  <div class="row">
+    <div class="col-12">
+      <div class="row" *ngFor="let item of notifications">
+        <div class="col-12 item">
+          <img src="{{item.sender.profilePic!=''?'http://locahost:5000/image/'+item.sender.profilePic:'../../../assets/avatar.svg'}}" class="img-fluid avatar">
+          <div class="w-100">
+            <h4>{{item.sender.name}}</h4>
+            <p>{{item.message}}</p>
+            <p class="time">{{0 + + (item.createdAt+'000') | date:'hh:mm a'}}</p>
+          </div>
+        </div>
+      </div>
+      <h4 class="mt-5 text-center" *ngIf="notifications.length <= 0">No Data Found</h4>
+    </div>
+  </div>
+</div>

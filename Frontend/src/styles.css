@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.success-snackbar{
+    background-color: #599b5b;
+}
+
+.error-snackbar{
+    background-color: rgb(158, 55, 55);
+}
+
+.hide{
+    display: none;
+}
+
+.mat-tab-body-content{
+    overflow: hidden !important;
+    padding-top: 15px;
+}
+
+.container{
+    max-width: 100% !important;
+}

@@ -1,0 +1,90 @@
+.avatar{
+    width : 150px;
+    height : 150px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.container{
+    width: auto;
+    height: 91.5%;
+    margin: 2%;
+    overflow-y: auto;
+    padding:0px;
+}
+
+.messagebox{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.messagebox .avatar{
+    height: 40px;
+    width: 40px;
+}
+
+.header{
+    display: flex;
+    padding : 20px 25px 13px 25px;
+    box-shadow : 0 3px 5px rgba(0,0,0,0.12);
+}
+
+.header div:nth-child(2){
+    margin-left: 20px;
+}
+
+.messagearea{
+    padding: 10px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.footer{
+    width: 100%;
+    align-self: flex-end;
+    margin-top: auto;
+    display: flex;
+    padding: 20px;
+}
+
+.footer input{
+    border-radius: 25px;
+    border-color: rgba(0,0,0,0.12);
+    min-height: 40px;
+    padding: 0px 20px;
+}
+
+.footer input[type=text]:focus{
+    border-color: rgba(0,0,0,0.12);
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h5{
+    font-size: 15px;
+    line-height: 15px;
+}
+
+h6{
+    font-size: 12px;
+    line-height: 25px;
+}
+
+.messagebox p{
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.messagebox .footer button{
+    padding: 10px 8px 0px 11px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 50%;
+    margin-left: 10px;
+}

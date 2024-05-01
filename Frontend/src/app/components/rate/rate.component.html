@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row w-100">
+        <h5>Rate and Review</h5>
+        <div class="col-12 mt-4">
+            <div class="row mb-3" style="cursor: pointer;">
+                <div class="col" (click)="selectRating(1)"><mat-icon id="1">star</mat-icon></div>
+                <div class="col" (click)="selectRating(2)"><mat-icon id="2">star_border</mat-icon></div>
+                <div class="col" (click)="selectRating(3)"><mat-icon id="3">star_border</mat-icon></div>
+                <div class="col" (click)="selectRating(4)"><mat-icon id="4">star_border</mat-icon></div>
+                <div class="col" (click)="selectRating(5)"><mat-icon id="5">star_border</mat-icon></div>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Review</mat-label>
+                    <textarea matInput [formControl]="rateControl"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="submitReview()">Submit Review</button>
+            </div>
+        </div>
+    </div>
+</div>

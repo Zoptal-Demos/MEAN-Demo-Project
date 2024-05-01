@@ -1,0 +1,35 @@
+.container{
+    width: auto;
+    height: 91.5%;
+    margin: 2%;
+    padding: 2% 4%;
+    overflow-y: auto;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.list-item{
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+h5{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+h6{
+    font-size: 15px;
+}
+
+.list-item:hover{
+    background-color: rgba(0,0,0,0.12);
+}
